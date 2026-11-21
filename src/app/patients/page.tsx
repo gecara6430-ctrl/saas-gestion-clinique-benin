@@ -32,29 +32,30 @@ export default function PatientsPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Répertoire des patients</h1>
-          <p className="text-slate-500 text-sm">Gestion du dossier patient et suivi des rendez-vous</p>
+          <h1 className="headline-lg text-on-surface">Répertoire des patients</h1>
+          <p className="body-sm text-on-surface-variant">Gestion du dossier patient et suivi des rendez-vous</p>
         </div>
         <Button>Nouveau patient</Button>
       </div>
 
+      {/* Recherche et filtres */}
       <Card>
         <CardContent className="p-4">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
-              <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Rechercher un patient</label>
+              <label className="label-md text-on-surface-variant uppercase block mb-1">Rechercher un patient</label>
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full rounded-lg border border-border bg-card px-3 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full rounded-sm border border-outline bg-card p-3 body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 placeholder="Nom, prénom ou identifiant..."
               />
             </div>
             <select
               value={filterInsurer}
               onChange={(e) => setFilterInsurer(e.target.value)}
-              className="w-full md:w-48 rounded-lg border border-border bg-card px-3 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full md:w-48 rounded-sm border border-outline bg-card p-3 body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option>Tous les assureurs</option>
               <option>NSIA</option>
@@ -63,12 +64,13 @@ export default function PatientsPage() {
               <option>Mobile Money</option>
             </select>
           </div>
-          <p className="text-xs text-slate-400 mt-3">
+          <p className="body-sm text-on-surface-variant mt-3">
             {filtered.length} patient{filtered.length > 1 ? 's' : ''} trouvé{filtered.length > 1 ? 's' : ''} sur {allPatients.length}
           </p>
         </CardContent>
       </Card>
 
+      {/* Liste des patients */}
       <Card>
         <CardHeader>
           <CardTitle>Patients enregistrés ({filtered.length})</CardTitle>
@@ -76,20 +78,20 @@ export default function PatientsPage() {
         <CardContent className="p-0">
           {filtered.length === 0 ? (
             <div className="p-8 text-center">
-              <p className="text-slate-500 text-sm">Aucun patient ne correspond à vos critères de recherche.</p>
+              <p className="body-sm text-on-surface-variant">Aucun patient ne correspond à vos critères de recherche.</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-border bg-slate-50">
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Identité</th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Âge</th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Téléphone</th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Dernière visite</th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Prochain RDV</th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Assureur</th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500 text-right">Action</th>
+                  <tr className="border-b border-border bg-surface-container-low">
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Identité</th>
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Âge</th>
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Téléphone</th>
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Dernière visite</th>
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Prochain RDV</th>
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Assureur</th>
+                    <th className="px-4 py-3 label-sm text-on-surface-variant uppercase text-right">Action</th>
                   </tr>
                 </thead>
                 <tbody>

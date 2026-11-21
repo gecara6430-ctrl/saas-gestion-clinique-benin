@@ -21,8 +21,8 @@ export function Button({
     <button
       type={type}
       className={[
-        'inline-flex items-center justify-center rounded-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
-        'bg-primary text-primary-foreground hover:bg-primary-hover',
+        'inline-flex items-center justify-center rounded-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus-ring focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
+        'bg-primary text-primary-fg hover:bg-primary-hover',
         sizes[size],
         className,
       ].filter(Boolean).join(' ')}

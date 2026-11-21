@@ -8,14 +8,14 @@ export function Badge({
   children: React.ReactNode
 }) {
   const variants: Record<string, string> = {
-    default: 'border-border text-slate-600 bg-slate-100',
-    success: 'border-success/20 text-success bg-success/10',
-    warning: 'border-warning/20 text-warning bg-warning/10',
-    critical: 'border-critical/20 text-critical bg-critical/10',
-    nsia: 'border-nsia/20 text-nsia bg-nsia/10',
-    sanlam: 'border-sanlam/20 text-sanlam bg-sanlam/10',
-    prive: 'border-prive/20 text-prive bg-prive/10',
-    mobilemoney: 'border-mobilemoney/20 text-mobilemoney bg-mobilemoney/10',
+    default: 'border-outline text-on-surface-variant bg-surface-container-lowest',
+    success: 'border-success-border text-success bg-success-bg',
+    warning: 'border-warning-border text-warning bg-warning-bg',
+    critical: 'border-critical-border text-critical bg-critical-bg',
+    nsia: 'border-nsia-border text-nsia bg-nsia-bg',
+    sanlam: 'border-sanlam-border text-sanlam bg-sanlam-bg',
+    prive: 'border-prive-border text-prive bg-prive-bg',
+    mobilemoney: 'border-mobilemoney-border text-mobilemoney bg-mobilemoney-bg',
   }
 
   return (

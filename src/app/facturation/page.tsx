@@ -36,15 +36,15 @@ export default function FacturationPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Caisse & Facturation</h1>
-          <p className="text-slate-500 text-sm">Encaissements, factures et suivi des paiements — Jean-Baptiste Houngbédji</p>
+          <h1 className="headline-lg text-on-surface">Caisse & Facturation</h1>
+          <p className="body-sm text-on-surface-variant">Encaissements, factures et suivi des paiements — Jean-Baptiste Houngbédji</p>
         </div>
         <Button>Nouvelle facture</Button>
       </div>
 
       {confirmed && (
-        <div className="rounded-lg border border-success/20 bg-success/5 p-4">
-          <p className="text-sm text-success">
+        <div className="rounded-lg border border-success-border bg-success-bg p-4">
+          <p className="body-sm text-success">
             Encaissement de <span className="font-mono">{confirmedAmount} FCFA</span> enregistré en mode <span className="font-medium">{mode}</span>.
           </p>
         </div>
@@ -68,12 +68,12 @@ export default function FacturationPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="border-b border-border bg-slate-50">
-                      <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Facture</th>
-                      <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Patient</th>
-                      <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Montant</th>
-                      <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Mode</th>
-                      <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500 text-right">Statut</th>
+                    <tr className="border-b border-border bg-surface-container-low">
+                      <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Facture</th>
+                      <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Patient</th>
+                      <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Montant</th>
+                      <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Mode</th>
+                      <th className="px-4 py-3 label-sm text-on-surface-variant uppercase text-right">Statut</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -95,21 +95,21 @@ export default function FacturationPage() {
             <CardContent>
               <form onSubmit={handleEncaisser} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Montant (FCFA)</label>
+                  <label className="label-md text-on-surface-variant uppercase block mb-1">Montant (FCFA)</label>
                   <input
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="w-full rounded-lg border border-border bg-card px-3 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full rounded-sm border border-outline bg-card px-3 py-2 body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="0"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 uppercase mb-1">Mode de paiement</label>
+                  <label className="label-md text-on-surface-variant uppercase block mb-1">Mode de paiement</label>
                   <select
                     value={mode}
                     onChange={(e) => setMode(e.target.value)}
-                    className="w-full rounded-lg border border-border bg-card px-3 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full rounded-sm border border-outline bg-card px-3 py-2 body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   >
                     <option>Espèces</option>
                     <option>Mobile Money (MTN MoMo)</option>
@@ -131,17 +131,17 @@ export default function FacturationPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-500">Espèces</span>
-                  <span className="font-mono text-slate-900">FCFA 450 000</span>
+                <div className="flex justify-between body-sm">
+                  <span className="text-on-surface-variant">Espèces</span>
+                  <span className="font-mono text-on-surface">FCFA 450 000</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-500">Mobile Money</span>
-                  <span className="font-mono text-slate-900">FCFA 320 000</span>
+                <div className="flex justify-between body-sm">
+                  <span className="text-on-surface-variant">Mobile Money</span>
+                  <span className="font-mono text-on-surface">FCFA 320 000</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-slate-500">Assurances</span>
-                  <span className="font-mono text-slate-900">FCFA 475 000</span>
+                <div className="flex justify-between body-sm">
+                  <span className="text-on-surface-variant">Assurances</span>
+                  <span className="font-mono text-on-surface">FCFA 475 000</span>
                 </div>
               </div>
             </CardContent>

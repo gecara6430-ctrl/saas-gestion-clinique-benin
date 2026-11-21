@@ -17,16 +17,16 @@ export function KPICard({
   const trendColors: Record<string, string> = {
     positive: 'text-success',
     negative: 'text-critical',
-    neutral: 'text-slate-500',
+    neutral: 'text-on-surface-variant',
   }
 
   return (
     <Card className="p-5">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">{title}</p>
-          <p className="text-2xl font-semibold text-slate-900 mt-1">{value}</p>
-          {subtext && <p className="text-sm text-slate-400 mt-0.5">{subtext}</p>}
+          <p className="label-md text-on-surface-variant uppercase tracking-wider">{title}</p>
+          <p className="headline-lg text-on-surface mt-1">{value}</p>
+          {subtext && <p className="body-sm text-on-surface-variant mt-0.5">{subtext}</p>}
         </div>
         {trend && (
           <Badge variant="default" className={`ml-auto mt-1 ${trendColors[trendType]}`}>

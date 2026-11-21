@@ -28,15 +28,15 @@ export function PatientRow({
   const ins = insurerStyles[insurer]
 
   return (
-    <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors group">
+    <tr className="border-b border-surface-container-low hover:bg-surface-container-low transition-colors group">
       <td className="px-4 py-4">
-        <div className="font-medium text-slate-900">{name}</div>
-        <div className="text-xs text-slate-500">{id}</div>
+        <div className="font-medium text-on-surface">{name}</div>
+        <div className="body-sm text-on-surface-variant">{id}</div>
       </td>
-      <td className="px-4 py-4 text-slate-600">{age} ans</td>
-      <td className="px-4 py-4 font-mono text-sm text-slate-600">{phone}</td>
-      <td className="px-4 py-4 text-slate-600">{lastVisit}</td>
-      <td className="px-4 py-4 text-slate-600">{nextVisit}</td>
+      <td className="px-4 py-4 text-on-surface-variant">{age} ans</td>
+      <td className="px-4 py-4 font-mono text-sm text-on-surface-variant">{phone}</td>
+      <td className="px-4 py-4 text-on-surface-variant">{lastVisit}</td>
+      <td className="px-4 py-4 text-on-surface-variant">{nextVisit}</td>
       <td className="px-4 py-4">
         <span
           className="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold border uppercase"

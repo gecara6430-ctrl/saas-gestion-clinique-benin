@@ -10,7 +10,7 @@ export function Card({
   return (
     <div
       className={[
-        'rounded-lg border border-border bg-card text-card-foreground shadow-sm',
+        'rounded-lg border border-border bg-card text-on-surface shadow-sm',
         className,
       ].filter(Boolean).join(' ')}
       {...props}
@@ -25,7 +25,7 @@ export function CardHeader({ className, children }: { className?: string; childr
 }
 
 export function CardTitle({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <h3 className={['text-2xl font-semibold leading-none tracking-tight', className].filter(Boolean).join(' ')}>{children}</h3>
+  return <h3 className={['headline-lg', className].filter(Boolean).join(' ')}>{children}</h3>
 }
 
 export function CardContent({ className, children }: { className?: string; children: React.ReactNode }) {

@@ -16,8 +16,8 @@ export default function AssurancesPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Assurances & Tiers-payant</h1>
-          <p className="text-slate-500 text-sm">Bordereaux, tiers-payant et suivi des assureurs régionaux</p>
+          <h1 className="headline-lg text-on-surface">Assurances & Tiers-payant</h1>
+          <p className="body-sm text-on-surface-variant">Bordereaux, tiers-payant et suivi des assureurs régionaux</p>
         </div>
         <Button>Nouveau bordereau</Button>
       </div>
@@ -38,13 +38,13 @@ export default function AssurancesPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-border bg-slate-50">
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Bordereau</th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Patient</th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Assureur</th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Montant</th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Date</th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500 text-right">Statut</th>
+                <tr className="border-b border-border bg-surface-container-low">
+                  <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Bordereau</th>
+                  <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Patient</th>
+                  <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Assureur</th>
+                  <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Montant</th>
+                  <th className="px-4 py-3 label-sm text-on-surface-variant uppercase">Date</th>
+                  <th className="px-4 py-3 label-sm text-on-surface-variant uppercase text-right">Statut</th>
                 </tr>
               </thead>
               <tbody>
@@ -64,21 +64,21 @@ export default function AssurancesPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Bordereaux envoyés</span>
-                <span className="font-mono text-slate-900">12</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">Bordereaux envoyés</span>
+                <span className="font-mono text-on-surface">12</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Acceptés</span>
-                <span className="font-mono text-slate-900">10</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">Acceptés</span>
+                <span className="font-mono text-on-surface">10</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">En attente</span>
-                <span className="font-mono text-slate-900">1</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">En attente</span>
+                <span className="font-mono text-on-surface">1</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Refusés</span>
-                <span className="font-mono text-slate-900">1</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">Refusés</span>
+                <span className="font-mono text-on-surface">1</span>
               </div>
             </div>
           </CardContent>
@@ -90,21 +90,21 @@ export default function AssurancesPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Bordereaux envoyés</span>
-                <span className="font-mono text-slate-900">8</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">Bordereaux envoyés</span>
+                <span className="font-mono text-on-surface">8</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Acceptés</span>
-                <span className="font-mono text-slate-900">7</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">Acceptés</span>
+                <span className="font-mono text-on-surface">7</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">En attente</span>
-                <span className="font-mono text-slate-900">1</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">En attente</span>
+                <span className="font-mono text-on-surface">1</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Refusés</span>
-                <span className="font-mono text-slate-900">0</span>
+              <div className="flex justify-between body-sm">
+                <span className="text-on-surface-variant">Refusés</span>
+                <span className="font-mono text-on-surface">0</span>
               </div>
             </div>
           </CardContent>
@@ -114,20 +114,19 @@ export default function AssurancesPage() {
   )
 }
 
-// Stub KPI card inline to avoid circular import complexity
 function KPICardStub({ title, value, subtext, trend, trendType }: { title: string; value: string; subtext?: string; trend?: string; trendType: 'positive' | 'negative' | 'neutral' }) {
   const trendColors: Record<string, string> = {
     positive: 'text-success',
     negative: 'text-critical',
-    neutral: 'text-slate-500',
+    neutral: 'text-on-surface-variant',
   }
   return (
     <Card className="p-5">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">{title}</p>
-          <p className="text-2xl font-semibold text-slate-900 mt-1">{value}</p>
-          {subtext && <p className="text-sm text-slate-400 mt-0.5">{subtext}</p>}
+          <p className="label-md text-on-surface-variant uppercase tracking-wider">{title}</p>
+          <p className="headline-lg text-on-surface mt-1">{value}</p>
+          {subtext && <p className="body-sm text-on-surface-variant mt-0.5">{subtext}</p>}
         </div>
         {trend && <Badge variant="default" className={`ml-auto mt-1 ${trendColors[trendType]}`}>{trend}</Badge>}
       </div>

@@ -29,10 +29,10 @@ export function FactureRow({
   const ins = insurerStyles[mode] || { bg: '#F8FAFC', text: '#475569', border: '#E2E8F0' }
 
   return (
-    <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-      <td className="px-4 py-4 font-mono text-sm text-slate-900">{id}</td>
-      <td className="px-4 py-4 text-slate-600">{patient}</td>
-      <td className="px-4 py-4 font-mono text-sm text-slate-900">{montant}</td>
+    <tr className="border-b border-surface-container-low hover:bg-surface-container-low transition-colors">
+      <td className="px-4 py-4 font-mono text-sm text-on-surface">{id}</td>
+      <td className="px-4 py-4 text-on-surface-variant">{patient}</td>
+      <td className="px-4 py-4 font-mono text-sm text-on-surface">{montant}</td>
       <td className="px-4 py-4">
         <span
           className="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold border uppercase"

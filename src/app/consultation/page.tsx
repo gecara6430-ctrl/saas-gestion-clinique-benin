@@ -26,7 +26,6 @@ export default function ConsultationPage() {
   const handleVitalChange = (index: number, value: string) => {
     const next = [...vitals]
     next[index].value = value
-    // Recompute status based on simple thresholds
     const label = next[index].label
     const num = parseFloat(value.replace(/[^\d.,]/g, '').replace(',', '.'))
     if (label === 'Température' && num > 38) next[index].status = 'critical'
@@ -40,7 +39,6 @@ export default function ConsultationPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSaving(true)
-    // Simulate save
     await new Promise((r) => setTimeout(r, 800))
     setSaving(false)
     setSaved(true)
@@ -52,8 +50,8 @@ export default function ConsultationPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Consultation médicale</h1>
-          <p className="text-slate-500 text-sm">Saisie des constantes et du compte-rendu — Mireille Dossou (P-001)</p>
+          <h1 className="headline-lg text-on-surface">Consultation médicale</h1>
+          <p className="body-sm text-on-surface-variant">Saisie des constantes et du compte-rendu — Mireille Dossou (P-001)</p>
         </div>
         <Button onClick={handleSubmit} disabled={saving || !allVitalsFilled} className="w-full md:w-auto">
           {saving ? 'Enregistrement…' : 'Enregistrer la consultation'}
@@ -61,8 +59,8 @@ export default function ConsultationPage() {
       </div>
 
       {saved && (
-        <div className="rounded-lg border border-success/20 bg-success/5 p-4">
-          <p className="text-sm text-success">Consultation enregistrée avec succès pour Mireille Dossou (P-001).</p>
+        <div className="rounded-lg border border-success-border bg-success-bg p-4">
+          <p className="body-sm text-success">Consultation enregistrée avec succès pour Mireille Dossou (P-001).</p>
         </div>
       )}
 
@@ -100,20 +98,20 @@ export default function ConsultationPage() {
                 ))}
               </div>
               <div className="mt-6">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-2">Motif de consultation</label>
+                <label className="label-md text-on-surface-variant uppercase block mb-2">Motif de consultation</label>
                 <textarea
                   value={motif}
                   onChange={(e) => setMotif(e.target.value)}
-                  className="w-full h-24 rounded-lg border border-border bg-card p-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full h-24 rounded-sm border border-outline bg-card p-3 body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Décrire le motif de consultation..."
                 />
               </div>
               <div className="mt-6">
-                <label className="block text-xs font-semibold text-slate-500 uppercase mb-2">Observations du médecin</label>
+                <label className="label-md text-on-surface-variant uppercase block mb-2">Observations du médecin</label>
                 <textarea
                   value={observations}
                   onChange={(e) => setObservations(e.target.value)}
-                  className="w-full h-32 rounded-lg border border-border bg-card p-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full h-32 rounded-sm border border-outline bg-card p-3 body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Compte-rendu médical, diagnostic, prescription..."
                 />
               </div>
@@ -130,18 +128,18 @@ export default function ConsultationPage() {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-500">Statut</span>
+                  <span className="body-sm text-on-surface-variant">Statut</span>
                   <Badge variant={saved ? 'success' : 'warning'}>
                     {saved ? 'Validée' : 'En attente'}
                   </Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-500">Niveau de triage</span>
+                  <span className="body-sm text-on-surface-variant">Niveau de triage</span>
                   <Badge variant="default">Standard</Badge>
                 </div>
                 <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-sm font-medium text-slate-900">Prochaine étape</span>
-                  <span className="text-sm text-slate-500">{saved ? 'Consultation terminée' : 'Saisie des constantes'}</span>
+                  <span className="title-sm text-on-surface">Prochaine étape</span>
+                  <span className="body-sm text-on-surface-variant">{saved ? 'Consultation terminée' : 'Saisie des constantes'}</span>
                 </div>
               </div>
             </CardContent>
