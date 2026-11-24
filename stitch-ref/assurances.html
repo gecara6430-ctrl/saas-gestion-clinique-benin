@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed-dim":"#4edea3","on-error-container":"#93000a","inverse-primary":"#6bd8cb","on-tertiary":"#ffffff","error":"#ba1a1a","on-error":"#ffffff","secondary-fixed-dim":"#bec6e0","on-primary":"#ffffff","surface-container-low":"#eff4ff","background":"#f8f9ff","secondary":"#565e74","on-tertiary-container":"#f5fff6","outline":"#6d7a77","on-background":"#0b1c30","on-tertiary-fixed":"#002113","outline-variant":"#bcc9c6","on-surface":"#0b1c30","on-primary-fixed-variant":"#005049","surface-container-lowest":"#ffffff","on-secondary-fixed":"#131b2e","on-primary-fixed":"#00201d","surface":"#f8f9ff","on-surface-variant":"#3d4947","primary":"#00685f","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","on-secondary-fixed-variant":"#3f465c","surface-dim":"#cbdbf5","surface-tint":"#006a61","surface-variant":"#d3e4fe","on-tertiary-fixed-variant":"#005236","inverse-on-surface":"#eaf1ff","secondary-container":"#dae2fd","surface-container":"#e5eeff","primary-fixed-dim":"#6bd8cb","primary-container":"#008378","primary-fixed":"#89f5e7","tertiary":"#006947","inverse-surface":"#213145","secondary-fixed":"#dae2fd","tertiary-container":"#00855b","surface-bright":"#f8f9ff","tertiary-fixed":"#6ffbbe","error-container":"#ffdad6","on-secondary":"#ffffff","on-primary-container":"#f4fffc","on-secondary-container":"#5c647a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-lg":"2rem","space-xl":"2rem","margin-desktop":"2rem","gutter":"1.5rem","space-xxs":"0.125rem","margin":"1.5rem","space-sm":"0.5rem","space-2xl":"3rem","margin-mobile":"1rem","space-xs":"0.25rem","space-md":"1rem","space-lg":"1.5rem","gutter-sm":"1rem"},"fontFamily":{"display-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"data-mono":["JetBrains Mono"],"display-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"data-mono":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="px-space-md py-space-lg flex items-center gap-space-sm bg-surface-container-low"><img alt="Logo Clinique Sainte-Marie" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrB8SEYDHBVyqCui4ORYbEB1puHBEshrWKPQk7zkYKSWSbLfJm4iOWUzYMp6Bg7gVnos20pwJ9jEHTn6ecFH_Xh7x1JJce-DvR_wkBqixZhq8Z4U2qUgsOy_2NRXyz65HB67p81uefSSTTRfojy9Hi8k_phiNL4UwPWasF55WAOXk9mVKrUFEhMmlK3EDi7JRL6vYLgezCJiygExJf3Xg7JCc2nJilWz_C35dMWXFvpX"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">Clinique Sainte-Marie</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xxs"><span class="material-symbols-outlined text-[12px] text-primary">location_on</span>Cotonou, Bénin</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase px-space-xs">Navigation Clinique</span></div><nav class="flex flex-col gap-space-xxs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-lg rounded-lg"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tableau-de-bord" href="#"><span class="font-label-lg text-label-lg">Tableau de bord</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="salle-d-attente" href="#"><span class="font-label-lg text-label-lg">Salle d'attente</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="patients" href="#"><span class="font-label-lg text-label-lg">Patients</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="agenda" href="#"><span class="font-label-lg text-label-lg">Agenda</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="caisse-et-facturation" href="#"><span class="font-label-lg text-label-lg">Caisse &amp; Facturation</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="bordereaux-assurances-et-tiers-payant" href="#"><span class="font-label-lg text-label-lg">Bordereaux &amp; Tiers-Payant</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="rapports" href="#"><span class="font-label-lg text-label-lg">Rapports</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="parametres" href="#"><span class="font-label-lg text-label-lg">Paramètres</span></a></nav></div><div class="p-space-md m-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">emergency</span><span class="font-label-md text-label-md text-on-surface">Urgences SM</span></div><span class="font-data-mono text-data-mono text-on-surface-variant">+229 21 30 11 00</span><span class="font-label-sm text-label-sm text-tertiary flex items-center gap-space-xxs"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Garde 24h/7j</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="Logo Clinique Sainte-Marie" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrB8SEYDHBVyqCui4ORYbEB1puHBEshrWKPQk7zkYKSWSbLfJm4iOWUzYMp6Bg7gVnos20pwJ9jEHTn6ecFH_Xh7x1JJce-DvR_wkBqixZhq8Z4U2qUgsOy_2NRXyz65HB67p81uefSSTTRfojy9Hi8k_phiNL4UwPWasF55WAOXk9mVKrUFEhMmlK3EDi7JRL6vYLgezCJiygExJf3Xg7JCc2nJilWz_C35dMWXFvpX"/><div class="flex flex-col"><span class="font-headline-md text-headline-md text-on-surface flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px]">local_hospital</span>Clinique Sainte-Marie</span><span class="font-label-sm text-label-sm text-on-surface-variant">Pôle Médical Spécialisé • Cotonou</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-sm text-label-sm text-tertiary">En ligne</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-72 h-10 pl-9 pr-space-md bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm rounded-lg focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher un dossier, N° IPU, bordereau..." type="text"/></div><button class="flex items-center gap-space-xs h-10 px-space-md bg-primary text-on-primary rounded-lg font-label-lg text-label-lg shadow-sm hover:bg-on-primary-fixed-variant transition-colors"><span class="material-symbols-outlined text-[18px]">post_add</span><span>Nouveau Bordereau</span></button><div class="relative flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Dr. Mensah</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Médecin Chef / Gestionnaire</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- Top Action & Meta Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-on-surface">Gestion des Bordereaux &amp; Tiers-Payant</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">calendar_month</span>
+            Période active : Octobre 2024
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            Taux de recouvrement : 52.8%
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Supervision financière, télétransmission et suivi du recouvrement auprès des assureurs partenaires agréés de la Clinique Sainte-Marie.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<button class="h-10 px-3.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">cloud_upload</span>
+<span>Télétransmettre lots</span>
+</button>
+<button class="h-10 px-3.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">account_balance</span>
+<span>Rapprocher les virements</span>
+</button>
+<button class="h-10 px-space-md bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all hover:scale-[1.01] active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+<span>Générer le Bordereau Mensuel</span>
+</button>
+</div>
+</div>
+<!-- Executive KPI Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Total à recouvrer ce mois</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-data-mono">2 450 000</span>
+<span class="font-label-lg text-label-lg text-secondary">FCFA</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            18 dossiers en cours
+          </span>
+<span class="font-data-mono text-[12px] text-primary font-semibold">Échéance 31 Oct</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Bordereaux envoyés</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-data-mono">1 800 000</span>
+<span class="font-label-lg text-label-lg text-secondary">FCFA</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">forward_to_inbox</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+            4 bordereaux transmis
+          </span>
+<span class="font-data-mono text-[12px] text-secondary">Liquidation en cours</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Remboursements reçus</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-data-mono">950 000</span>
+<span class="font-label-lg text-label-lg text-secondary">FCFA</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="flex items-center gap-1 text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+            +12% vs mois précédent
+          </span>
+<span class="font-data-mono text-[12px] text-on-surface-variant">BOA / Ecobank</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm flex flex-col overflow-hidden">
+<!-- Insurance Filter Tabs & Quick Actions -->
+<div class="p-space-md flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-low/50">
+<!-- Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 xl:pb-0" id="insurance-tabs">
+<button class="tab-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all" data-insurer="all" type="button">
+<span>Toutes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-white font-data-mono text-[11px]">18</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 transition-all" data-insurer="nsia" type="button">
+<span>NSIA</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-secondary font-data-mono text-[11px]">8</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 transition-all" data-insurer="sanlam" type="button">
+<span>Sanlam</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-secondary font-data-mono text-[11px]">5</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 transition-all" data-insurer="atlantique" type="button">
+<span>Atlantique</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-secondary font-data-mono text-[11px]">3</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 transition-all" data-insurer="ascoma" type="button">
+<span>Ascoma</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-secondary font-data-mono text-[11px]">2</span>
+</button>
+</div>
+<!-- Filter Controls -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-outline text-[18px]">search</span>
+<input class="w-64 h-9 pl-8 pr-space-sm bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="filter-search" placeholder="Rechercher patient, N° carte, facture..." type="text"/>
+</div>
+<div class="relative">
+<select class="h-9 pl-3 pr-8 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="filter-status">
+<option value="all">Tous les statuts</option>
+<option value="pret">Prêt à facturer</option>
+<option value="envoye">Envoyé</option>
+<option value="paye">Payé</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<select class="h-9 pl-3 pr-8 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option selected="">Octobre 2024</option>
+<option>Septembre 2024</option>
+<option>Août 2024</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Data Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse" id="claims-table">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 font-semibold">Date</th>
+<th class="py-3 px-4 font-semibold">N° Facture</th>
+<th class="py-3 px-4 font-semibold">Patient</th>
+<th class="py-3 px-4 font-semibold">Assurance &amp; Prise en Charge</th>
+<th class="py-3 px-4 font-semibold text-right">Montant Total</th>
+<th class="py-3 px-4 font-semibold text-right">Part Assurance</th>
+<th class="py-3 px-4 font-semibold text-center">Statut Liquidation</th>
+<th class="py-3 px-4 font-semibold text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md" id="table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors claim-row" data-insurer="atlantique" data-status="pret">
+<td class="py-3.5 px-4 font-data-mono text-data-mono text-secondary">24 Oct 2024</td>
+<td class="py-3.5 px-4">
+<span class="font-data-mono text-data-mono font-medium text-primary bg-surface-container px-2 py-0.5 rounded">#FAC-2024-1042</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center">
+                    JH
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm leading-tight text-on-surface">Jean-Baptiste Houngbédji</span>
+<span class="font-body-sm text-body-sm text-secondary">IPU-88219 • Cardiologie</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="px-2.5 py-0.5 rounded-full w-max bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium">
+                    Atlantique Assurances
+                  </span>
+<span class="font-data-mono text-[12px] text-secondary pl-1">#ATL-88412</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-data-mono text-data-mono text-on-surface">
+                40 000 FCFA
+              </td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-data-mono font-semibold text-primary">32 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-secondary">80% couvert</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Prêt à facturer
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Consulter la prise en charge" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Télécharger le récapitulatif" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors claim-row bg-surface-container-low/20" data-insurer="sanlam" data-status="envoye">
+<td class="py-3.5 px-4 font-data-mono text-data-mono text-secondary">23 Oct 2024</td>
+<td class="py-3.5 px-4">
+<span class="font-data-mono text-data-mono font-medium text-primary bg-surface-container px-2 py-0.5 rounded">#FAC-2024-1038</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center justify-center">
+                    MD
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm leading-tight text-on-surface">Mireille Dossou</span>
+<span class="font-body-sm text-body-sm text-secondary">IPU-49102 • Échographie</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="px-2.5 py-0.5 rounded-full w-max bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-medium">
+                    Sanlam Bénin
+                  </span>
+<span class="font-data-mono text-[12px] text-secondary pl-1">#SAN-99301</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-data-mono text-data-mono text-on-surface">
+                65 000 FCFA
+              </td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-data-mono font-semibold text-primary">52 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-secondary">80% couvert</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Envoyé (En attente)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Consulter la prise en charge" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Télécharger le récapitulatif" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors claim-row" data-insurer="nsia" data-status="paye">
+<td class="py-3.5 px-4 font-data-mono text-data-mono text-secondary">22 Oct 2024</td>
+<td class="py-3.5 px-4">
+<span class="font-data-mono text-data-mono font-medium text-primary bg-surface-container px-2 py-0.5 rounded">#FAC-2024-1025</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center">
+                    KA
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm leading-tight text-on-surface">Koffi Agossou</span>
+<span class="font-body-sm text-body-sm text-secondary">IPU-10294 • Laboratoire Analyses</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="px-2.5 py-0.5 rounded-full w-max bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium">
+                    NSIA Assurances
+                  </span>
+<span class="font-data-mono text-[12px] text-secondary pl-1">#NSI-44210</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-data-mono text-data-mono text-on-surface">
+                120 000 FCFA
+              </td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-data-mono font-semibold text-tertiary">96 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-secondary">80% couvert</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                  Payé (Remboursé)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Consulter la prise en charge" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Télécharger le récapitulatif" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors claim-row bg-surface-container-low/20" data-insurer="nsia" data-status="pret">
+<td class="py-3.5 px-4 font-data-mono text-data-mono text-secondary">20 Oct 2024</td>
+<td class="py-3.5 px-4">
+<span class="font-data-mono text-data-mono font-medium text-primary bg-surface-container px-2 py-0.5 rounded">#FAC-2024-1011</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center">
+                    AB
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm leading-tight text-on-surface">Aïcha Bello</span>
+<span class="font-body-sm text-body-sm text-secondary">IPU-33290 • Consultation Pédiatrie</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="px-2.5 py-0.5 rounded-full w-max bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium">
+                    NSIA Assurances
+                  </span>
+<span class="font-data-mono text-[12px] text-secondary pl-1">#NSI-33189</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-data-mono text-data-mono text-on-surface">
+                35 000 FCFA
+              </td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-data-mono font-semibold text-primary">24 500 FCFA</span>
+<span class="font-label-sm text-label-sm text-secondary">70% couvert</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Prêt à facturer
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Consulter la prise en charge" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Télécharger le récapitulatif" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors claim-row" data-insurer="ascoma" data-status="envoye">
+<td class="py-3.5 px-4 font-data-mono text-data-mono text-secondary">18 Oct 2024</td>
+<td class="py-3.5 px-4">
+<span class="font-data-mono text-data-mono font-medium text-primary bg-surface-container px-2 py-0.5 rounded">#FAC-2024-0994</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center justify-center">
+                    FH
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm leading-tight text-on-surface">Félix Houeto</span>
+<span class="font-body-sm text-body-sm text-secondary">IPU-55018 • Hospitalisation 48h</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="px-2.5 py-0.5 rounded-full w-max bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium">
+                    Ascoma Bénin
+                  </span>
+<span class="font-data-mono text-[12px] text-secondary pl-1">#ASC-00214</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-data-mono text-data-mono text-on-surface">
+                210 000 FCFA
+              </td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-data-mono font-semibold text-primary">168 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-secondary">80% couvert</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Envoyé (En attente)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Consulter la prise en charge" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Télécharger le récapitulatif" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors claim-row bg-surface-container-low/20" data-insurer="sanlam" data-status="paye">
+<td class="py-3.5 px-4 font-data-mono text-data-mono text-secondary">15 Oct 2024</td>
+<td class="py-3.5 px-4">
+<span class="font-data-mono text-data-mono font-medium text-primary bg-surface-container px-2 py-0.5 rounded">#FAC-2024-0982</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center">
+                    SD
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm leading-tight text-on-surface">Sèdami Dossou</span>
+<span class="font-body-sm text-body-sm text-secondary">IPU-77218 • Petite Chirurgie</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="px-2.5 py-0.5 rounded-full w-max bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-medium">
+                    Sanlam Bénin
+                  </span>
+<span class="font-data-mono text-[12px] text-secondary pl-1">#SAN-55219</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-data-mono text-data-mono text-on-surface">
+                80 000 FCFA
+              </td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-data-mono font-semibold text-tertiary">56 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-secondary">70% couvert</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                  Payé (Remboursé)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Consulter la prise en charge" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Télécharger le récapitulatif" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Aggregations -->
+<div class="p-space-md bg-surface-container-low/40 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-md text-body-md text-secondary">
+            18 factures affichées — Total part assurance :
+          </span>
+<span class="font-data-mono text-title-sm text-on-surface font-semibold bg-surface-container-lowest px-2.5 py-1 rounded shadow-sm">
+            1 845 000 FCFA
+          </span>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<button class="h-9 px-3 bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">table_view</span>
+<span>Exporter CSV / Excel</span>
+</button>
+<div class="flex items-center gap-1 font-label-md text-label-md text-secondary">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-2 font-data-mono text-[12px] text-on-surface font-medium">Page 1 sur 3</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Assurance Protocol Details / Bottom Bento Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Section 1: Guide Télétransmission -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+            Protocoles Télétransmission
+          </span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">Actifs</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          Flux EDI direct et passerelle sécurisée avec les serveurs d'agrément NSIA Santé Bénin et Sanlam Africa Cotonou.
+        </p>
+<div class="flex flex-col gap-2 mt-2">
+<div class="flex items-center justify-between text-body-sm bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-md text-label-md text-on-surface">NSIA EDI Direct</span>
+<span class="font-data-mono text-[11px] text-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Opérationnel
+            </span>
+</div>
+<div class="flex items-center justify-between text-body-sm bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-md text-label-md text-on-surface">Sanlam WebServices</span>
+<span class="font-data-mono text-[11px] text-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Synchronisé 14:15
+            </span>
+</div>
+</div>
+</div>
+<!-- Section 2: Rejets & Alertes Liquidation -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+            Alertes Rejets / Pièces Manquantes
+          </span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">1 Dossier</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          Dossiers nécessitant une régularisation de volet médical ou bon de prise en charge avant forclusion.
+        </p>
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">#FAC-2024-0941 • 45 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Ascoma</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Manque signature médecin prescripteur (Dr. Mensah)</span>
+<button class="text-primary font-label-sm text-label-sm self-start mt-1 hover:underline" type="button">
+            Régulariser la pièce →
+          </button>
+</div>
+</div>
+<!-- Section 3: Historique des Règlements Bancaires -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">payments</span>
+            Derniers Virements Reçus
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">Octobre</span>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<div class="flex items-center justify-between text-body-sm pb-2 border-b-0">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Virement NSIA #VIR-8831</span>
+<span class="font-body-sm text-body-sm text-secondary font-data-mono">18 Oct • Ecobank Bénin</span>
+</div>
+<span class="font-data-mono text-data-mono font-semibold text-tertiary">+620 000 FCFA</span>
+</div>
+<div class="flex items-center justify-between text-body-sm pt-1">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Virement Sanlam #VIR-7729</span>
+<span class="font-body-sm text-body-sm text-secondary font-data-mono">12 Oct • BOA Cotonou</span>
+</div>
+<span class="font-data-mono text-data-mono font-semibold text-tertiary">+330 000 FCFA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple reactive filter logic for client-side fluidity
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('#insurance-tabs .tab-btn');
+    const searchInput = document.getElementById('filter-search');
+    const statusSelect = document.getElementById('filter-status');
+    const rows = document.querySelectorAll('#claims-table .claim-row');
+
+    let currentInsurer = 'all';
+
+    function applyFilters() {
+      const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const selectedStatus = statusSelect ? statusSelect.value : 'all';
+
+      rows.forEach(row => {
+        const rowInsurer = row.getAttribute('data-insurer');
+        const rowStatus = row.getAttribute('data-status');
+        const rowText = row.innerText.toLowerCase();
+
+        const matchesInsurer = (currentInsurer === 'all' || rowInsurer === currentInsurer);
+        const matchesStatus = (selectedStatus === 'all' || rowStatus === selectedStatus);
+        const matchesSearch = (!searchTerm || rowText.includes(searchTerm));
+
+        if (matchesInsurer && matchesStatus && matchesSearch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          t.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        tab.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        tab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        currentInsurer = tab.getAttribute('data-insurer') || 'all';
+        applyFilters();
+      });
+    });
+
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+    if (statusSelect) statusSelect.addEventListener('change', applyFilters);
+  });
+</script></main></div></body></html>

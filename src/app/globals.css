@@ -1,22 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  html,
   body {
-    @apply bg-background text-foreground antialiased;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    overscroll-behavior: none;
+    background-color: #f8f9ff;
+    color: #0b1c30;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* La maquette Stitch masque les barres de défilement : le rendu doit être identique. */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+/*
+ * Fidélité Stitch — tailles d'icônes Material Symbols.
+ *
+ * La feuille Google (chargée via <link> dans le head) déclare
+ * `.material-symbols-outlined { font-size: 24px }` hors calque, alors que les
+ * utilitaires Tailwind sont émis dans `@layer utilities`. Une règle hors calque
+ * l'emporte sur une règle calquée quel que soit l'ordre : tous les `text-[Npx]`
+ * des icônes étaient donc ignorés et chaque icône rendait en 24px.
+ *
+ * Mesure sur assurances (viewport 1440px) : bouton « Télétransmettre » de 176px
+ * au lieu de 170px, colonne de gauche réduite de 468px à 452px, les deux
+ * pastilles du bandeau (453px) débordaient d'1px et passaient en deux lignes.
+ *
+ * Déclarations hors calque et en spécificité (0,2,0) : elles priment sur Google
+ * (0,1,0) indépendamment de l'ordre des stylesheets. Les 217 icônes du projet
+ * portent toutes une taille explicite.
+ */
+.material-symbols-outlined.text-\[12px\] {
+  font-size: 12px;
+}
+
+.material-symbols-outlined.text-\[13px\] {
+  font-size: 13px;
+}
+
+.material-symbols-outlined.text-\[14px\] {
+  font-size: 14px;
+}
+
+.material-symbols-outlined.text-\[15px\] {
+  font-size: 15px;
+}
+
+.material-symbols-outlined.text-\[16px\] {
+  font-size: 16px;
+}
+
+.material-symbols-outlined.text-\[18px\] {
+  font-size: 18px;
+}
+
+.material-symbols-outlined.text-\[20px\] {
+  font-size: 20px;
+}
+
+.material-symbols-outlined.text-\[22px\] {
+  font-size: 22px;
+}
+
+.material-symbols-outlined.text-\[24px\] {
+  font-size: 24px;
+}
+
+.material-symbols-outlined.text-\[28px\] {
+  font-size: 28px;
+}
+
+.material-symbols-outlined.text-\[320px\] {
+  font-size: 320px;
 }
