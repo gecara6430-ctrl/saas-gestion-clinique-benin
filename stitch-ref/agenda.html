@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-fixed":"#dae2fd","tertiary-container":"#00855b","tertiary-fixed-dim":"#4edea3","on-secondary-fixed":"#131b2e","surface":"#f8f9ff","surface-dim":"#cbdbf5","on-surface-variant":"#3d4947","on-tertiary-container":"#f5fff6","tertiary":"#006947","on-primary-fixed-variant":"#005049","primary":"#00685f","surface-variant":"#d3e4fe","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","surface-container-low":"#eff4ff","surface-container-high":"#dce9ff","on-secondary":"#ffffff","on-secondary-fixed-variant":"#3f465c","inverse-on-surface":"#eaf1ff","secondary-container":"#dae2fd","on-tertiary-fixed":"#002113","on-primary-container":"#f4fffc","background":"#f8f9ff","secondary":"#565e74","outline":"#6d7a77","surface-bright":"#f8f9ff","on-tertiary-fixed-variant":"#005236","on-background":"#0b1c30","on-primary-fixed":"#00201d","on-tertiary":"#ffffff","outline-variant":"#bcc9c6","on-error-container":"#93000a","error":"#ba1a1a","tertiary-fixed":"#6ffbbe","surface-container-lowest":"#ffffff","on-error":"#ffffff","surface-container":"#e5eeff","on-secondary-container":"#5c647a","on-primary":"#ffffff","error-container":"#ffdad6","inverse-primary":"#6bd8cb","surface-tint":"#006a61","primary-fixed":"#89f5e7","secondary-fixed-dim":"#bec6e0","on-surface":"#0b1c30","primary-fixed-dim":"#6bd8cb","primary-container":"#008378"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"1.5rem","space-2xl":"3rem","gutter":"1.5rem","margin-mobile":"1rem","gutter-sm":"1rem","space-sm":"0.5rem","space-md":"1rem","space-xs":"0.25rem","space-xl":"2rem","margin-desktop":"2rem","space-lg":"1.5rem","gutter-lg":"2rem","space-xxs":"0.125rem"},fontFamily:{"data-mono":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},fontSize:{"data-mono":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"body-lg":["15px",{lineHeight:"24px",fontWeight:"400"}],"display-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg-mobile":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-md":["18px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-space-lg pb-space-md"><div class="flex flex-col"><div class="px-space-md mb-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-[22px]">local_hospital</span></div><div class="flex flex-col"><span class="font-title-sm text-title-sm text-on-surface leading-tight">Clinique Ste-Marie</span><span class="font-label-sm text-label-sm text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>Pôle Cotonou</span></div></div><div class="px-space-md mb-space-xs"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase font-bold">Navigation Clinique</span></div><nav class="flex flex-col gap-1 px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm border-l-4 border-primary"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tableau-de-bord" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Tableau de bord</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="salle-d-attente" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">hourglass_empty</span><span>Salle d'attente</span></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-bold">7</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="patients" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Patients</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm border-l-4 border-primary" data-path="agenda" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span>Agenda</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="caisse-facturation" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Caisse &amp; Facturation</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="bordereaux-assurances-tiers-payant" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Bordereaux &amp; Tiers</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="rapports" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Rapports</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="parametres" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Paramètres</span></a></nav></div><div class="px-space-md"><div class="p-space-sm bg-surface-container-low rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-bold uppercase text-on-surface-variant">Urgences SM</span><span class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary-container font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>Garde 24/7</span></div><div class="font-data-mono text-data-mono font-bold text-on-surface mt-1">+229 21 30 11 00</div><span class="font-label-sm text-label-sm text-secondary">Ligne directe Cotonou</span></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Rechercher un dossier, N° IPU, praticien..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center gap-2 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">person_add</span><span>+ Nouveau Patient</span></button><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-title-sm text-title-sm text-on-surface leading-tight">Dr. Mensah</span><span class="font-label-sm text-label-sm text-secondary">Médecin Chef / Généraliste</span></div></div></div></header><main class="w-full pt-16 px-space-lg bg-surface"><div class="flex flex-col w-full pb-space-2xl gap-y-space-lg">
+<!-- EN-TÊTE DE PAGE : CONTRÔLES D'AGENDA & ACTIONS RAPIDES -->
+<header class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-label-sm uppercase tracking-wider text-primary font-bold">PLANIFICATION CLINIQUE • GESTION DU TEMPS MÉDICAL</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-data-mono text-label-sm">S47 • 2026</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Agenda Médical</h1>
+<p class="font-body-md text-body-md text-secondary">
+        Planification des consultations et rendez-vous — Semaine du 18 au 24 novembre 2026
+      </p>
+</div>
+<!-- Périodes, vues et CTA -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Navigateur de semaine -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<button aria-label="Semaine précédente" class="h-9 px-2.5 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+<span class="hidden xl:inline font-label-md text-label-md ml-1">Précédente</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container-lowest shadow-sm font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5 mx-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">today</span>
+<span>Aujourd'hui</span>
+</button>
+<button aria-label="Semaine suivante" class="h-9 px-2.5 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="hidden xl:inline font-label-md text-label-md mr-1">Suivante</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Segment de vue (Pill) -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="h-9 px-3.5 rounded-lg font-label-md text-label-md transition-colors bg-primary text-on-primary font-semibold shadow-sm" type="button">
+          Semaine
+        </button>
+<button class="h-9 px-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+          Mois
+        </button>
+<button class="h-9 px-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+          Jour
+        </button>
+</div>
+<!-- Exportation -->
+<button class="h-10 px-3 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-1.5 transition-colors shadow-sm" title="Exporter le planning" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">ios_share</span>
+<span class="hidden md:inline">Exporter</span>
+</button>
+<!-- CTA Nouveau RDV -->
+<button class="h-10 px-4 bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg rounded-lg flex items-center gap-2 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Nouveau Rendez-vous</span>
+</button>
+</div>
+</header>
+<!-- BANDE DE 4 KPI METRIC CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1 : Rendez-vous du jour -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Rendez-vous aujourd'hui</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">24</span>
+<span class="font-title-sm text-title-sm text-secondary">consultations</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-body-sm text-body-sm text-secondary">18 honorés ou en cours</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>+3 urgences
+        </span>
+</div>
+</div>
+<!-- KPI 2 : Taux de remplissage -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Taux d'occupation</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">87 %</span>
+<span class="font-body-sm text-body-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>+5% vs sem. passée
+        </span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 87%"></div>
+</div>
+</div>
+<!-- KPI 3 : Créneaux libres -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Créneaux libres</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">6</span>
+<span class="font-title-sm text-title-sm text-secondary">disponibilités</span>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-body-sm text-body-sm text-secondary">2 créneaux d'après-midi dès 15h30</span>
+</div>
+</div>
+<!-- KPI 4 : Annulations & Reports -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary">Annulations &amp; Reports</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">event_busy</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">2</span>
+<span class="font-title-sm text-title-sm text-error">dossiers</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-body-sm text-body-sm text-secondary">Prévenus via WhatsApp</span>
+<span class="font-data-mono text-label-sm text-on-surface-variant font-medium">Réassignés</span>
+</div>
+</div>
+</section>
+<!-- ZONE CENTRALE EN 2 COLONNES (GRILLE 70% / VOLET LATÉRAL 30%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- COLONNE GAUCHE (70% - lg:col-span-8 xl:col-span-9) : GRILLE HEBDOMADAIRE -->
+<section class="lg:col-span-8 xl:col-span-9 flex flex-col gap-space-md bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm">
+<!-- Barre d'outils et sélecteurs de filtre -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Sélecteur praticien -->
+<div class="relative inline-flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-[18px] text-primary">stethoscope</span>
+<select aria-label="Filtrer par praticien" class="pl-8 pr-8 py-2 bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer appearance-none">
+<option selected="">Dr. Mensah — Médecin Chef (Tous cabinets)</option>
+<option>Dr. Lawson — Cardiologie (Cabinet 2)</option>
+<option>Dr. Akplogan — Pédiatrie (Cabinet 3)</option>
+<option>Cabinet 1 — Médecine générale polyvalente</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 pointer-events-none text-[16px] text-secondary">expand_more</span>
+</div>
+<!-- Filtre rapide Service -->
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Zone :</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface px-1.5 py-0.5 rounded bg-surface-container-lowest shadow-xs">Cotonou Plateau</span>
+</div>
+</div>
+<!-- Légende clinique standardisée -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Confirmé</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span>Arrivé / En cours</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>En attente</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span>Urgence / Annulé</span>
+</div>
+</div>
+</div>
+<!-- Grille Hebdomadaire Responsive (Scroll horizontal sur petits écrans) -->
+<div class="w-full overflow-x-auto">
+<div class="min-w-[840px] flex flex-col">
+<!-- En-tête des 7 colonnes de la semaine -->
+<div class="grid grid-cols-7 gap-2 pb-space-sm">
+<!-- Lundi 18 -->
+<div class="p-2 text-center rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">LUN</span>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">18 Nov</div>
+<span class="font-data-mono text-label-sm text-secondary">21 RDV</span>
+</div>
+<!-- Mardi 19 -->
+<div class="p-2 text-center rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">MAR</span>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">19 Nov</div>
+<span class="font-data-mono text-label-sm text-secondary">26 RDV</span>
+</div>
+<!-- Mercredi 20 (Aujourd'hui) -->
+<div class="p-2 text-center rounded-lg bg-primary-container text-on-primary-container relative shadow-sm">
+<span class="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[10px] tracking-wide uppercase font-bold shadow-xs">Aujourd'hui</span>
+<span class="font-label-sm text-label-sm text-on-primary-container/80 uppercase font-semibold mt-1 inline-block">MER</span>
+<div class="font-title-sm text-title-sm font-bold text-on-primary-container">20 Nov</div>
+<span class="font-data-mono text-label-sm text-on-primary-container font-semibold">24 RDV</span>
+</div>
+<!-- Jeudi 21 -->
+<div class="p-2 text-center rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">JEU</span>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">21 Nov</div>
+<span class="font-data-mono text-label-sm text-secondary">19 RDV</span>
+</div>
+<!-- Vendredi 22 -->
+<div class="p-2 text-center rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">VEN</span>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">22 Nov</div>
+<span class="font-data-mono text-label-sm text-secondary">22 RDV</span>
+</div>
+<!-- Samedi 23 -->
+<div class="p-2 text-center rounded-lg bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">SAM</span>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">23 Nov</div>
+<span class="font-data-mono text-label-sm text-secondary">Matinée</span>
+</div>
+<!-- Dimanche 24 -->
+<div class="p-2 text-center rounded-lg bg-surface-container-low/50">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">DIM</span>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">24 Nov</div>
+<span class="font-label-sm text-label-sm text-error font-medium">Garde 24/7</span>
+</div>
+</div>
+<!-- Lignes de créneaux horaires -->
+<div class="flex flex-col gap-2 mt-2">
+<!-- CRÉNEAU 08:30 - 09:15 -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[96px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">08:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">clinical_notes</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Rodrigue Hounkpatin</div>
+<span class="font-label-sm text-label-sm text-secondary">Générale • Checkup</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">08:30</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">cardiology</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Nadège Zinsou</div>
+<span class="font-label-sm text-label-sm text-secondary">Cardio • NSIA 80%</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : Koffi Agossou - EN CONSULTATION -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-md flex flex-col justify-between relative pl-3.5 ring-2 ring-tertiary-container/30">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container rounded-l-lg"></span>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-bold text-tertiary-container">08:30 - 09:15</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>En cours
+                    </span>
+</div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface mt-1 truncate">Koffi Agossou</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px] text-primary">cardiology</span>
+<span>Cabinet 1 • Bilan contrôle</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="font-label-sm text-[11px] font-semibold text-primary">NSIA Assurances</span>
+<span class="font-data-mono text-label-sm text-secondary">80% TP</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">08:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Emmanuel Soglo</div>
+<span class="font-label-sm text-label-sm text-secondary">Contrôle tensionnel</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">Sanlam 80%</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">08:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">medication</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Bio Gounou</div>
+<span class="font-label-sm text-label-sm text-secondary">Bilan hépatique</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container-high text-on-surface-variant">Confirmé</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">08:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">child_care</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Aïcha Bello (Bébé)</div>
+<span class="font-label-sm text-label-sm text-secondary">Vaccination 9 mois</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Privé</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">emergency</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Urgences SM</span>
+</div>
+</div>
+<!-- CRÉNEAU 09:30 - 10:15 -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[96px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">09:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">ecg_heart</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Marie-Claire Houngbo</div>
+<span class="font-label-sm text-label-sm text-secondary">Électrocardiogramme</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">09:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Sèdami Dossou</div>
+<span class="font-label-sm text-label-sm text-secondary">Consultation générale</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : Mireille Dossou -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between relative pl-3.5">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-lg"></span>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-semibold text-primary">09:30 - 10:15</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-[10px]">
+                      Salle attente
+                    </span>
+</div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface mt-1 truncate">Mireille Dossou</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px] text-primary">prescriptions</span>
+<span>Ordonnance &amp; Suivi bio</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="font-label-sm text-[11px] font-semibold text-secondary">Sanlam Bénin</span>
+<span class="font-data-mono text-label-sm text-secondary">80% TP</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">09:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">ecg</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Félicité Zinsou</div>
+<span class="font-label-sm text-label-sm text-secondary">HTA chronique</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">Atlantique Assur.</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">09:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Koffi Danhouan</div>
+<span class="font-label-sm text-label-sm text-secondary">Pneumologie</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container-high text-on-surface-variant">Confirmé</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">09:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">medical_services</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Armel Kpadé</div>
+<span class="font-label-sm text-label-sm text-secondary">Contrôle post-op</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">NSIA 100%</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Équipe garde</span>
+</div>
+</div>
+<!-- CRÉNEAU 10:30 - 11:15 -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[96px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">10:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">water_drop</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Bertin Agbota</div>
+<span class="font-label-sm text-label-sm text-secondary">Diabétologie</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">10:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Prudence Houénou</div>
+<span class="font-label-sm text-label-sm text-secondary">Bilan annuel</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : Jean-Baptiste Houngbédji -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between relative pl-3.5">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-lg"></span>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-semibold text-primary">10:30 - 11:15</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] font-semibold">
+                      Confirmé
+                    </span>
+</div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface mt-1 truncate">J-B. Houngbédji</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px] text-primary">monitor_heart</span>
+<span>Suivi HTA &amp; Écho Doppler</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="font-label-sm text-[11px] font-semibold text-primary">Atlantique Assur.</span>
+<span class="font-data-mono text-label-sm text-secondary">80% TP</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">10:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">vaccines</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Sonia Tokpo</div>
+<span class="font-label-sm text-label-sm text-secondary">Vaccin Fièvre Jaune</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container-high text-on-surface-variant">Confirmé</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">10:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Gérard Alapini</div>
+<span class="font-label-sm text-label-sm text-secondary">Consultation senior</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">Sanlam 90%</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">10:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">ecg_heart</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Théophile Boko</div>
+<span class="font-label-sm text-label-sm text-secondary">Bilan cardiaque</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Privé</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">local_pharmacy</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Pharmacie H24</span>
+</div>
+</div>
+<!-- CRÉNEAU 11:30 - 12:15 -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[96px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">11:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Bernadette Tossou</div>
+<span class="font-label-sm text-label-sm text-secondary">Médecine générale</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">11:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">child_care</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Enfant Zossou (3 ans)</div>
+<span class="font-label-sm text-label-sm text-secondary">Pédiatrie clinique</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : Aïcha Bello -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between relative pl-3.5">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-lg"></span>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-semibold text-primary">11:30 - 12:15</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] font-semibold">
+                      Confirmé
+                    </span>
+</div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface mt-1 truncate">Aïcha Bello</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px] text-primary">child_care</span>
+<span>Pédiatrie • Visite 9 mois</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="font-label-sm text-[11px] font-semibold text-secondary">Sanlam Bénin</span>
+<span class="font-data-mono text-label-sm text-secondary">70% TP</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">11:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Lucette Ahoyo</div>
+<span class="font-label-sm text-label-sm text-secondary">Consultation bilan</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container-high text-on-surface-variant">Confirmé</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">11:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">bloodtype</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Faustin Dah-Gbéto</div>
+<span class="font-label-sm text-label-sm text-secondary">Glycémie &amp; Rein</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">NSIA 80%</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">11:30</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Clémentine Gbaguidi</div>
+<span class="font-label-sm text-label-sm text-secondary">Fin de garde matin</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Privé</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">bedroom_parent</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Hospitalisations</span>
+</div>
+</div>
+<!-- PAUSE MÉRIDIENNE / STAFF MÉDICAL (12:30 - 13:30) -->
+<div class="grid grid-cols-7 gap-2 items-stretch py-1">
+<div class="col-span-7 bg-surface-container-low/90 rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">group_work</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">12:30 — 13:30 • Pause méridienne &amp; Staff clinique collégial (Dr. Mensah, Dr. Lawson, Infirmiers majors)</span>
+</div>
+<span class="font-data-mono text-label-sm text-secondary">Salle polyvalente B</span>
+</div>
+</div>
+<!-- CRÉNEAU 14:00 - 14:45 -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[96px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">14:00</span>
+<span class="material-symbols-outlined text-[14px] text-primary">cardiology</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Paulin Allabi</div>
+<span class="font-label-sm text-label-sm text-secondary">Suivi stent</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">14:00</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Yvette Houénou</div>
+<span class="font-label-sm text-label-sm text-secondary">Bilan lipidique</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : Marcel Codjia -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between relative pl-3.5">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-lg"></span>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-semibold text-primary">14:00 - 14:45</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] font-semibold">
+                      Confirmé
+                    </span>
+</div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface mt-1 truncate">Marcel Codjia</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px] text-primary">water_drop</span>
+<span>Diabétologie &amp; Profil glycémique</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="font-label-sm text-[11px] font-semibold text-secondary">Règlement Direct</span>
+<span class="font-data-mono text-label-sm text-secondary">Privé (Caisse)</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">14:00</span>
+<span class="material-symbols-outlined text-[14px] text-primary">stethoscope</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Serge Danvivi</div>
+<span class="font-label-sm text-label-sm text-secondary">Consultation générale</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container-high text-on-surface-variant">Confirmé</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">14:00</span>
+<span class="material-symbols-outlined text-[14px] text-primary">dermatology</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Edith Gbaguidi</div>
+<span class="font-label-sm text-label-sm text-secondary">Bilan cutané</span>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">Sanlam 80%</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary">Fermé après-midi</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">Urgences 24/7</span>
+</div>
+</div>
+<!-- CRÉNEAU 15:30 - 16:15 (DISPONIBILITÉ) -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[90px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">15:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Chantal Zounon</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">15:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Justin Tognon</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : CRÉNEAU LIBRE DISPONIBLE -->
+<div class="p-2.5 rounded-lg bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed-dim/30 transition-all flex flex-col justify-between group cursor-pointer">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-bold text-tertiary">15:30 - 16:15</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary group-hover:scale-110 transition-transform">add</span>
+</div>
+<div class="font-title-sm text-title-sm font-semibold text-tertiary mt-1">Créneau Disponible</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">Cabinet 1 • Dr. Mensah</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">+ Réserver consultation</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">15:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Gisèle Akpo</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">Atlantique 80%</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed-dim/30 transition-all flex flex-col justify-between group cursor-pointer">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-bold text-tertiary">15:30</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">add</span>
+</div>
+<span class="font-title-sm text-title-sm font-semibold text-tertiary">Libre</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">+ Réserver</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary">Fermé</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary">Garde</span>
+</div>
+</div>
+<!-- CRÉNEAU 16:30 - 17:15 -->
+<div class="grid grid-cols-7 gap-2 items-stretch min-h-[96px]">
+<!-- Lun -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">16:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Romain Agbo</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Passé</span>
+</div>
+<!-- Mar -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/60 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">16:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Désiré Boko</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-secondary">Honoré</span>
+</div>
+<!-- Mer (Aujourd'hui) : Félicité Zinsou (En attente WhatsApp) -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between relative pl-3.5">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary rounded-l-lg"></span>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm font-semibold text-secondary">16:30 - 17:15</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[12px] text-tertiary">chat</span>WhatsApp
+                    </span>
+</div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface mt-1 truncate">Félicité Zinsou</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px] text-secondary">refresh</span>
+<span>Renouvellement ordonnance</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="font-label-sm text-[11px] font-semibold text-secondary">En attente confirm.</span>
+<span class="font-data-mono text-label-sm text-secondary">Relancée</span>
+</div>
+</div>
+<!-- Jeu -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">16:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Honorine Dossou</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container-high text-on-surface-variant">Confirmé</span>
+</div>
+<!-- Ven -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-label-sm text-secondary">16:30</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Abdoulaye Traoré</div>
+</div>
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-secondary-container text-on-secondary-fixed">Sanlam 80%</span>
+</div>
+<!-- Sam -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary">Fermé</span>
+</div>
+<!-- Dim -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/40 flex flex-col justify-center items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary">Garde 24/7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COLONNE DROITE (30% - lg:col-span-4 xl:col-span-3) : VOLET 'DÉTAILS DU JOUR & FILE ACTIVE' -->
+<aside class="lg:col-span-4 xl:col-span-3 flex flex-col gap-space-lg">
+<!-- CARTE 1 : Rendez-vous du jour (Mercredi 20 Nov) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary">Flux en direct</span>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Rendez-vous du jour</h2>
+<span class="font-body-sm text-body-sm text-secondary">Mercredi 20 Novembre 2026</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-data-mono text-label-sm font-bold shadow-xs">
+            24 RDV
+          </span>
+</div>
+<!-- Liste chronologique compacte des 6 prochains patients -->
+<div class="flex flex-col gap-2">
+<!-- Item 1 : Koffi Agossou -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-data-mono text-label-sm font-bold text-primary">08:30</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Koffi Agossou (42 ans)</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Cardiologie • Cabinet 1</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-bold shrink-0">
+              En consultation
+            </span>
+</div>
+<!-- Item 2 : Aïcha Bello -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-data-mono text-label-sm font-bold text-secondary">09:15</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Aïcha Bello (29 ans)</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Pédiatrie • 9 mois</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-[11px] font-bold shrink-0">
+              En salle d'attente
+            </span>
+</div>
+<!-- Item 3 : Emmanuel Soglo -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-data-mono text-label-sm font-bold text-secondary">10:00</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Emmanuel Soglo (51 ans)</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Bilan de santé • Routine</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-[11px] font-semibold shrink-0">
+              Confirmé
+            </span>
+</div>
+<!-- Item 4 : Mireille Dossou -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-data-mono text-label-sm font-bold text-secondary">10:30</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Mireille Dossou (34 ans)</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Médecine générale</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-[11px] font-semibold shrink-0">
+              Confirmé
+            </span>
+</div>
+<!-- Item 5 : Staff clinique interne -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-data-mono text-label-sm font-bold text-secondary">11:15</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Dr. Mensah &amp; Infirmiers</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Staff de coordination</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold shrink-0">
+              Interne
+            </span>
+</div>
+<!-- Item 6 : Marcel Codjia -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-data-mono text-label-sm font-bold text-secondary">14:00</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Marcel Codjia (54 ans)</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Diabétologie • Suivi bilan</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container/60 text-on-error-container font-label-sm text-[11px] font-bold shrink-0">
+              À confirmer
+            </span>
+</div>
+</div>
+<!-- Bouton lien vers la salle d'attente -->
+<a class="mt-2 w-full py-2.5 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 transition-colors" href="#">
+<span>Voir la file en Salle d'attente (7 patients)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- CARTE 2 : Actions rapides & Rappels WhatsApp Bénin -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[20px]">sms</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Passerelle WhatsApp &amp; SMS</h3>
+<span class="font-body-sm text-body-sm text-secondary">Rappels automatisés Cotonou</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Envoyés pour demain (Jeu 21)</span>
+<span class="font-data-mono text-label-sm font-bold text-tertiary">22 notifications</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Taux de présence confirmé</span>
+<span class="font-data-mono text-label-sm font-bold text-on-surface">96 %</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mt-1">
+<div class="bg-tertiary h-full rounded-full" style="width: 96%"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          Les relances automatiques incluent le lien de géolocalisation de la Clinique Sainte-Marie (Plateau Haie Vive).
+        </p>
+<!-- CTA WhatsApp -->
+<button class="w-full py-2.5 px-3 bg-tertiary hover:bg-tertiary-container text-on-tertiary font-label-md text-label-md rounded-lg flex items-center justify-center gap-2 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Envoyer relance groupée WhatsApp</span>
+</button>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

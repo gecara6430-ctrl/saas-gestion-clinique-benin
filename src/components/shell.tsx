@@ -107,14 +107,14 @@ const NAV_ASSURANCES: NavItem[] = [
 
 const HREFS: Record<string, string> = {
   "tableau-de-bord": "/",
-  "salle-d-attente": "#",
+  "salle-d-attente": "/consultation",
   "patients": "/patients",
-  "agenda": "#",
+  "agenda": "/agenda",
   "caisse-et-assurances": "/facturation",
   "caisse-et-facturation": "/facturation",
   "bordereaux-assurances-et-tiers-payant": "/assurances",
-  "rapports": "#",
-  "parametres": "#"
+  "rapports": "/rapports",
+  "parametres": "/parametres"
 };
 
 export function Shell({ children }: { children: ReactNode }) {
@@ -125,10 +125,20 @@ export function Shell({ children }: { children: ReactNode }) {
     setMenuOpen(false);
   }, [pathname]);
 
-  const activePath: string | null =
-    pathname === '/' ? 'tableau-de-bord' : pathname === '/patients' ? 'patients' : pathname === '/facturation' ? 'caisse-et-assurances' : null;
+  const ROUTES: Record<string, string> = {
+    '/': 'tableau-de-bord',
+    '/patients': 'patients',
+    '/facturation': 'caisse-et-assurances',
+    '/agenda': 'agenda',
+    '/rapports': 'rapports',
+    '/parametres': 'parametres',
+  };
+  const activePath: string | null = ROUTES[pathname] ?? null;
   const activeClasses =
-    pathname === '/' ? ACTIVE_DASHBOARD : pathname === '/patients' ? ACTIVE_PATIENTS : pathname === '/facturation' ? ACTIVE_CAISSE : INACTIVE;
+    pathname === '/' ? ACTIVE_DASHBOARD
+    : pathname === '/facturation' ? ACTIVE_CAISSE
+    : activePath ? ACTIVE_PATIENTS
+    : INACTIVE;
   const isAssurances = pathname === '/assurances';
 
   return (
@@ -139,21 +149,21 @@ export function Shell({ children }: { children: ReactNode }) {
 <a className={activePath === 'tableau-de-bord' ? activeClasses : INACTIVE} data-path="tableau-de-bord" href="/" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Tableau de bord</span></a>
 <a className={activePath === 'salle-d-attente' ? activeClasses : INACTIVE} data-path="salle-d-attente" href="/consultation" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Salle d'attente</span></a>
 <a className={activePath === 'patients' ? activeClasses : INACTIVE} data-path="patients" href="/patients" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Patients</span></a>
-<a className={activePath === 'agenda' ? activeClasses : INACTIVE} data-path="agenda" href="#" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Agenda</span></a>
+<a className={activePath === 'agenda' ? activeClasses : INACTIVE} data-path="agenda" href="/agenda" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Agenda</span></a>
 <a className={activePath === 'caisse-et-facturation' ? activeClasses : INACTIVE} data-path="caisse-et-facturation" href="/facturation" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Caisse & Facturation</span></a>
 <a className={activePath === 'bordereaux-assurances-et-tiers-payant' ? activeClasses : INACTIVE} data-path="bordereaux-assurances-et-tiers-payant" href="/assurances" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Bordereaux & Tiers-Payant</span></a>
-<a className={activePath === 'rapports' ? activeClasses : INACTIVE} data-path="rapports" href="#" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Rapports</span></a>
-<a className={activePath === 'parametres' ? activeClasses : INACTIVE} data-path="parametres" href="#" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Paramètres</span></a>
+<a className={activePath === 'rapports' ? activeClasses : INACTIVE} data-path="rapports" href="/rapports" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Rapports</span></a>
+<a className={activePath === 'parametres' ? activeClasses : INACTIVE} data-path="parametres" href="/parametres" onClick={() => setMenuOpen(false)}><span className="font-label-lg text-label-lg">Paramètres</span></a>
 </nav>
       ) : (
 <nav className="flex flex-col gap-space-xxs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-lg rounded-lg">
 <a aria-current={activePath === 'tableau-de-bord' ? 'page' : undefined} className={activePath === 'tableau-de-bord' ? activeClasses : INACTIVE} data-path="tableau-de-bord" href="/" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">grid_view</span><span className="font-label-lg text-label-lg">Tableau de bord</span></div></a>
 <a aria-current={activePath === 'salle-d-attente' ? 'page' : undefined} className={activePath === 'salle-d-attente' ? activeClasses : INACTIVE} data-path="salle-d-attente" href="/consultation" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">meeting_room</span><span className="font-label-lg text-label-lg">Salle d'attente</span></div><span className="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-space-xs py-0.5 rounded-full">7</span></a>
 <a aria-current={activePath === 'patients' ? 'page' : undefined} className={activePath === 'patients' ? activeClasses : INACTIVE} data-path="patients" href="/patients" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">folder_shared</span><span className="font-label-lg text-label-lg">Patients</span></div></a>
-<a aria-current={activePath === 'agenda' ? 'page' : undefined} className={activePath === 'agenda' ? activeClasses : INACTIVE} data-path="agenda" href="#" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">calendar_month</span><span className="font-label-lg text-label-lg">Agenda</span></div></a>
+<a aria-current={activePath === 'agenda' ? 'page' : undefined} className={activePath === 'agenda' ? activeClasses : INACTIVE} data-path="agenda" href="/agenda" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">calendar_month</span><span className="font-label-lg text-label-lg">Agenda</span></div></a>
 <a aria-current={activePath === 'caisse-et-assurances' ? 'page' : undefined} className={activePath === 'caisse-et-assurances' ? activeClasses : INACTIVE} data-path="caisse-et-assurances" href="/facturation" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">payments</span><span className="font-label-lg text-label-lg">Caisse & Assurances</span></div></a>
-<a aria-current={activePath === 'rapports' ? 'page' : undefined} className={activePath === 'rapports' ? activeClasses : INACTIVE} data-path="rapports" href="#" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">monitoring</span><span className="font-label-lg text-label-lg">Rapports</span></div></a>
-<a aria-current={activePath === 'parametres' ? 'page' : undefined} className={activePath === 'parametres' ? activeClasses : INACTIVE} data-path="parametres" href="#" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">tune</span><span className="font-label-lg text-label-lg">Paramètres</span></div></a>
+<a aria-current={activePath === 'rapports' ? 'page' : undefined} className={activePath === 'rapports' ? activeClasses : INACTIVE} data-path="rapports" href="/rapports" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">monitoring</span><span className="font-label-lg text-label-lg">Rapports</span></div></a>
+<a aria-current={activePath === 'parametres' ? 'page' : undefined} className={activePath === 'parametres' ? activeClasses : INACTIVE} data-path="parametres" href="/parametres" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">tune</span><span className="font-label-lg text-label-lg">Paramètres</span></div></a>
 </nav>
       )}
 </div><div className="p-space-md m-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs"><div className="flex items-center gap-space-xs"><span className="material-symbols-outlined text-primary text-[18px]">emergency</span><span className="font-label-md text-label-md text-on-surface">Urgences SM</span></div><span className="font-data-mono text-data-mono text-on-surface-variant">+229 21 30 11 00</span><span className="font-label-sm text-label-sm text-tertiary flex items-center gap-space-xxs"><span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Garde 24h/7j</span></div></aside>

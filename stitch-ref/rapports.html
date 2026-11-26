@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container":"#e5eeff","surface-container-high":"#dce9ff","inverse-primary":"#6bd8cb","surface-container-lowest":"#ffffff","inverse-on-surface":"#eaf1ff","secondary-container":"#dae2fd","on-error":"#ffffff","error-container":"#ffdad6","surface-bright":"#f8f9ff","primary-fixed-dim":"#6bd8cb","on-surface-variant":"#3d4947","primary-container":"#008378","surface-tint":"#006a61","primary-fixed":"#89f5e7","on-secondary-fixed":"#131b2e","tertiary-fixed-dim":"#4edea3","tertiary-container":"#00855b","background":"#f8f9ff","on-tertiary":"#ffffff","on-tertiary-container":"#f5fff6","outline-variant":"#bcc9c6","surface-container-low":"#eff4ff","on-primary-fixed-variant":"#005049","on-secondary-container":"#5c647a","outline":"#6d7a77","on-tertiary-fixed-variant":"#005236","on-secondary-fixed-variant":"#3f465c","tertiary":"#006947","secondary-fixed-dim":"#bec6e0","on-background":"#0b1c30","secondary":"#565e74","on-primary":"#ffffff","primary":"#00685f","tertiary-fixed":"#6ffbbe","on-error-container":"#93000a","inverse-surface":"#213145","surface-variant":"#d3e4fe","surface-dim":"#cbdbf5","on-secondary":"#ffffff","on-tertiary-fixed":"#002113","secondary-fixed":"#dae2fd","surface-container-highest":"#d3e4fe","error":"#ba1a1a","surface":"#f8f9ff","on-surface":"#0b1c30","on-primary-fixed":"#00201d","on-primary-container":"#f4fffc"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","space-xl":"2rem","space-xs":"0.25rem","margin-desktop":"2rem","gutter":"1.5rem","space-xxs":"0.125rem","margin-mobile":"1rem","margin":"1.5rem","space-lg":"1.5rem","gutter-lg":"2rem","space-2xl":"3rem","space-sm":"0.5rem","gutter-sm":"1rem"},fontFamily:{"title-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"data-mono":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-md":["18px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-lg-mobile":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"24px",fontWeight:"400"}],"display-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"data-mono":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-space-lg pb-space-md"><div class="flex flex-col"><div class="px-space-md mb-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm"><span class="material-symbols-outlined text-[24px]">local_hospital</span></div><div class="flex flex-col"><span class="font-title-sm text-title-sm text-on-surface leading-tight font-bold">Clinique Ste-Marie</span><span class="font-label-sm text-label-sm text-primary flex items-center gap-1.5 mt-0.5"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>Pôle Cotonou</span></div></div><div class="px-space-md mb-space-xs"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase font-bold">Navigation Clinique</span></div><nav class="flex flex-col gap-1 px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm border-l-4 border-primary"><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="salle-d-attente" href="#"><span>Salle d'attente</span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-bold">7</span></a><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="patients" href="#">Patients</a><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="agenda" href="#">Agenda</a><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="caisse-facturation" href="#">Caisse &amp; Facturation</a><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="bordereaux-assurances-tiers-payant" href="#">Bordereaux &amp; Tiers-Payant</a><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="rapports-statistiques" href="#">Rapports</a><a class="flex items-center px-space-sm py-2 rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="parametres" href="#">Paramètres</a></nav></div><div class="px-space-md"><div class="p-space-sm bg-surface-container-low rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-bold uppercase text-on-surface-variant">Urgences SM</span><span class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary-container font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>Garde 24/7</span></div><div class="font-data-mono text-data-mono font-bold text-on-surface mt-1">+229 21 30 11 00</div><span class="font-label-sm text-label-sm text-secondary">Ligne directe Cotonou</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="hidden md:flex items-center gap-space-sm mr-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container/10 text-primary flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-title-sm text-title-sm text-on-surface leading-tight font-bold">Clinique Sainte-Marie</span><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>En ligne</span></div><span class="font-label-sm text-label-sm text-secondary">Pôle Médical Spécialisé • Cotonou</span></div></div><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Rechercher un dossier, N° IPU, praticien..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center gap-2 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">person_add</span><span>+ Nouveau Patient</span></button><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-title-sm text-title-sm text-on-surface leading-tight font-bold">Dr. Mensah</span><span class="font-label-sm text-label-sm text-secondary">Médecin Chef / Généraliste</span></div></div></div></header><main class="w-full pt-16 px-space-lg bg-surface"><div class="flex flex-col w-full pb-space-2xl">
+<!-- 1. BARRE DE TITRE & CONTRÔLES -->
+<section class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col">
+<h1 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">Rapports &amp; Statistiques</h1>
+<p class="font-body-md text-body-md text-secondary mt-0.5">Analyse de l'activité clinique et financière — Novembre 2026</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Sélecteur segmenté de période -->
+<div class="inline-flex p-1 bg-surface-container-high rounded-lg shadow-sm">
+<button class="px-space-md py-1.5 text-label-md font-label-md text-secondary hover:text-on-surface rounded-md transition-colors" type="button">
+          7 jours
+        </button>
+<button class="px-space-md py-1.5 text-label-md font-label-md bg-primary text-on-primary rounded-md shadow-sm font-semibold transition-all" type="button">
+          30 jours
+        </button>
+<button class="px-space-md py-1.5 text-label-md font-label-md text-secondary hover:text-on-surface rounded-md transition-colors" type="button">
+          Trimestre
+        </button>
+</div>
+<!-- Bouton d'exportation PDF -->
+<button class="h-10 px-space-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg rounded-lg shadow-sm flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px] text-primary">download</span>
+<span>Exporter PDF</span>
+</button>
+</div>
+</section>
+<!-- 2. BANDE DE 4 KPI CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- KPI 1 : Recettes du mois -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-secondary uppercase font-semibold">Recettes du mois</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight font-data-mono">
+          4 850 000 <span class="font-label-sm text-label-sm font-bold text-secondary">FCFA</span>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-label-sm font-label-sm font-bold bg-tertiary-container/15 text-tertiary">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>+12 %
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">vs mois précédent</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 : Patients reçus -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-secondary uppercase font-semibold">Patients reçus</span>
+<div class="w-9 h-9 rounded-lg bg-secondary-container/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight font-data-mono">
+          412
+        </div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-label-sm font-label-sm font-bold bg-tertiary-container/15 text-tertiary">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>+8 %
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">vs mois précédent</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 : Consultations -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-secondary uppercase font-semibold">Consultations</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight font-data-mono">
+          368
+        </div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-label-sm font-label-sm font-bold bg-tertiary-container/15 text-tertiary">
+<span class="material-symbols-outlined text-[14px] mr-0.5">arrow_upward</span>+5 %
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">d'occupation box</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 : Taux de recouvrement assurance -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-secondary uppercase font-semibold">Recouvrement Tiers-Payant</span>
+<div class="w-9 h-9 rounded-lg bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight font-data-mono">
+          92 <span class="font-label-sm text-label-sm font-bold text-secondary">%</span>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-label-sm font-label-sm font-bold bg-error-container text-error font-data-mono">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_down</span>−2 %
+          </span>
+<span class="font-body-sm text-body-sm text-secondary truncate">vs N-1 (rejets à traiter)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. GRILLE MÉDIANE (2 colonnes : 2/3 à gauche, 1/3 à droite) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl items-stretch">
+<!-- Carte large (2/3) : Évolution des recettes -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Évolution des recettes</h2>
+<p class="font-body-sm text-body-sm text-secondary">Flux hebdomadaires consolidés en FCFA • Cotonou</p>
+</div>
+<!-- Onglets d'analyse -->
+<div class="inline-flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-sm py-1 bg-primary text-on-primary font-label-sm text-label-sm rounded font-bold shadow-sm" type="button">Recettes</button>
+<button class="px-space-sm py-1 text-secondary hover:text-on-surface font-label-sm text-label-sm font-semibold transition-colors" type="button">Patients</button>
+<button class="px-space-sm py-1 text-secondary hover:text-on-surface font-label-sm text-label-sm font-semibold transition-colors" type="button">Consultations</button>
+</div>
+</div>
+<!-- Graphique Bar Chart HTML/Tailwind -->
+<div class="relative pt-6 pb-2">
+<!-- Guide lines horizontales -->
+<div class="absolute inset-x-0 top-6 bottom-8 flex flex-col justify-between pointer-events-none opacity-40">
+<div class="w-full flex items-center gap-2">
+<span class="font-data-mono text-label-sm text-secondary w-14 text-right">1.5 M</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<div class="w-full flex items-center gap-2">
+<span class="font-data-mono text-label-sm text-secondary w-14 text-right">1.0 M</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<div class="w-full flex items-center gap-2">
+<span class="font-data-mono text-label-sm text-secondary w-14 text-right">500 k</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<div class="w-full flex items-center gap-2">
+<span class="font-data-mono text-label-sm text-secondary w-14 text-right">0</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+</div>
+<!-- Zone des colonnes -->
+<div class="pl-16 pr-4 h-64 flex items-end justify-between gap-3 relative z-10">
+<!-- S1 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-data-mono text-label-sm text-secondary group-hover:text-primary font-bold mb-1.5 transition-colors">920 k</span>
+<div class="w-full max-w-[54px] bg-primary/75 group-hover:bg-primary rounded-t-lg transition-all" style="height: 61%;"></div>
+<div class="mt-2 text-center">
+<span class="font-label-md text-label-md font-bold text-on-surface block">S1</span>
+<span class="font-label-sm text-label-sm text-secondary block">01-07 Nov</span>
+</div>
+</div>
+<!-- S2 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-data-mono text-label-sm text-secondary group-hover:text-primary font-bold mb-1.5 transition-colors">1.15 M</span>
+<div class="w-full max-w-[54px] bg-primary/75 group-hover:bg-primary rounded-t-lg transition-all" style="height: 76%;"></div>
+<div class="mt-2 text-center">
+<span class="font-label-md text-label-md font-bold text-on-surface block">S2</span>
+<span class="font-label-sm text-label-sm text-secondary block">08-14 Nov</span>
+</div>
+</div>
+<!-- S3 (Peak) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group relative">
+<span class="absolute -top-1 px-2 py-0.5 bg-primary text-on-primary font-label-sm text-label-sm font-bold rounded-full shadow-sm whitespace-nowrap -translate-y-full">Pic d'affluence</span>
+<span class="font-data-mono text-label-sm text-primary font-bold mb-1.5">1.38 M</span>
+<div class="w-full max-w-[54px] bg-primary rounded-t-lg shadow-sm transition-all" style="height: 92%;"></div>
+<div class="mt-2 text-center">
+<span class="font-label-md text-label-md font-bold text-primary block">S3</span>
+<span class="font-label-sm text-label-sm text-primary/80 font-bold block">15-21 Nov</span>
+</div>
+</div>
+<!-- S4 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-data-mono text-label-sm text-secondary group-hover:text-primary font-bold mb-1.5 transition-colors">890 k</span>
+<div class="w-full max-w-[54px] bg-primary/75 group-hover:bg-primary rounded-t-lg transition-all" style="height: 59%;"></div>
+<div class="mt-2 text-center">
+<span class="font-label-md text-label-md font-bold text-on-surface block">S4</span>
+<span class="font-label-sm text-label-sm text-secondary block">22-28 Nov</span>
+</div>
+</div>
+<!-- S5 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-data-mono text-label-sm text-secondary group-hover:text-primary font-bold mb-1.5 transition-colors">510 k</span>
+<div class="w-full max-w-[54px] bg-primary/50 group-hover:bg-primary/80 rounded-t-lg transition-all" style="height: 34%;"></div>
+<div class="mt-2 text-center">
+<span class="font-label-md text-label-md font-bold text-on-surface block">S5</span>
+<span class="font-label-sm text-label-sm text-secondary block">29-30 Nov</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Légende et métadonnées -->
+<div class="pt-space-md mt-space-md bg-surface-container-low/60 rounded-lg p-space-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-secondary">Moyenne hebdo constatée :</span>
+<span class="font-data-mono font-bold text-body-sm text-on-surface">970 000 FCFA</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Projection clôture :</span>
+<span class="font-data-mono font-bold text-body-sm text-primary">5 120 000 FCFA</span>
+</div>
+</div>
+</div>
+<!-- Carte latérale (1/3) : Répartition par service -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="mb-space-md">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Répartition par pôle</h2>
+<p class="font-body-sm text-body-sm text-secondary">Part du chiffre d'affaires clinique global</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- 1. Consultation -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                Consultations &amp; Spécialités
+              </span>
+<span class="font-label-sm font-bold text-primary px-1.5 py-0.2 rounded bg-surface-container">42%</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 42%;"></div>
+</div>
+<div class="text-right mt-1 font-data-mono text-label-sm text-secondary">2 037 000 FCFA</div>
+</div>
+<!-- 2. Laboratoire -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+                Laboratoire &amp; Analyses
+              </span>
+<span class="font-label-sm font-bold text-on-surface px-1.5 py-0.2 rounded bg-surface-container-high">23%</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 23%;"></div>
+</div>
+<div class="text-right mt-1 font-data-mono text-label-sm text-secondary">1 115 500 FCFA</div>
+</div>
+<!-- 3. Imagerie -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                Imagerie Médicale (Écho/Radio)
+              </span>
+<span class="font-label-sm font-bold text-on-surface px-1.5 py-0.2 rounded bg-surface-container-high">18%</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 18%;"></div>
+</div>
+<div class="text-right mt-1 font-data-mono text-label-sm text-secondary">873 000 FCFA</div>
+</div>
+<!-- 4. Pharmacie -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+                Pharmacie &amp; Dispensaire
+              </span>
+<span class="font-label-sm font-bold text-on-surface px-1.5 py-0.2 rounded bg-surface-container-high">12%</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 12%;"></div>
+</div>
+<div class="text-right mt-1 font-data-mono text-label-sm text-secondary">582 000 FCFA</div>
+</div>
+<!-- 5. Autres -->
+<div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<span class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+                Hospitalisation jour &amp; Soins
+              </span>
+<span class="font-label-sm font-bold text-on-surface px-1.5 py-0.2 rounded bg-surface-container-high">5%</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 5%;"></div>
+</div>
+<div class="text-right mt-1 font-data-mono text-label-sm text-secondary">242 500 FCFA</div>
+</div>
+</div>
+</div>
+<!-- Pill status d'équilibre -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Activité ambulatoire</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Ratio nominal 80/20
+        </span>
+</div>
+</div>
+</section>
+<!-- 4. SECTION BASSE (2 blocs complémentaires) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Bloc gauche / principal (8 cols) : Top Praticiens -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Performance des Praticiens</h2>
+<p class="font-body-sm text-body-sm text-secondary">Activité clinique, volume d'actes et prise en charge conventionnée</p>
+</div>
+<span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold">
+            5 Actifs ce mois
+          </span>
+</div>
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-sm rounded-l-lg font-bold">Praticien</th>
+<th class="py-2.5 px-space-sm font-bold text-center">Consultations</th>
+<th class="py-2.5 px-space-sm font-bold text-right">Recettes (FCFA)</th>
+<th class="py-2.5 px-space-sm font-bold text-center">Taux Tiers-Payant</th>
+<th class="py-2.5 px-space-sm rounded-r-lg font-bold text-right">Satisfaction</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<!-- Dr. Mensah K. -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary/10 text-primary font-bold text-label-md flex items-center justify-center shrink-0">
+                      MK
+                    </div>
+<div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface leading-tight">Dr. Mensah K.</div>
+<div class="font-body-sm text-body-sm text-secondary">Chef Clinique • Médecine G.</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-center font-data-mono font-bold">112</td>
+<td class="py-3 px-space-sm text-right font-data-mono font-semibold">1 680 000</td>
+<td class="py-3 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container text-on-surface">
+                    78% NSIA/Sanlam
+                  </span>
+</td>
+<td class="py-3 px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-tertiary bg-tertiary-container/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>98%
+                  </span>
+</td>
+</tr>
+<!-- Dr. Adjovi S. -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-fixed font-bold text-label-md flex items-center justify-center shrink-0">
+                      AS
+                    </div>
+<div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface leading-tight">Dr. Adjovi S.</div>
+<div class="font-body-sm text-body-sm text-secondary">Pédiatrie &amp; Néonatalogie</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-center font-data-mono font-bold">84</td>
+<td class="py-3 px-space-sm text-right font-data-mono font-semibold">1 050 000</td>
+<td class="py-3 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container text-on-surface">
+                    82% Assurances
+                  </span>
+</td>
+<td class="py-3 px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-tertiary bg-tertiary-container/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>96%
+                  </span>
+</td>
+</tr>
+<!-- Dr. Zinsou C. -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container/15 text-primary-container font-bold text-label-md flex items-center justify-center shrink-0">
+                      ZC
+                    </div>
+<div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface leading-tight">Dr. Zinsou C.</div>
+<div class="font-body-sm text-body-sm text-secondary">Cardiologie Spécialisée</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-center font-data-mono font-bold">68</td>
+<td class="py-3 px-space-sm text-right font-data-mono font-semibold">1 120 000</td>
+<td class="py-3 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container text-on-surface">
+                    85% Prise en charge
+                  </span>
+</td>
+<td class="py-3 px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-tertiary bg-tertiary-container/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>99%
+                  </span>
+</td>
+</tr>
+<!-- Dr. Houngbédji P. -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container text-secondary font-bold text-label-md flex items-center justify-center shrink-0">
+                      HP
+                    </div>
+<div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface leading-tight">Dr. Houngbédji P.</div>
+<div class="font-body-sm text-body-sm text-secondary">Gynécologie-Obstétrique</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-center font-data-mono font-bold">58</td>
+<td class="py-3 px-space-sm text-right font-data-mono font-semibold">720 000</td>
+<td class="py-3 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container text-on-surface">
+                    75% Assurances
+                  </span>
+</td>
+<td class="py-3 px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-tertiary bg-tertiary-container/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>95%
+                  </span>
+</td>
+</tr>
+<!-- Dr. Akplogan M. -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-container/15 text-tertiary font-bold text-label-md flex items-center justify-center shrink-0">
+                      AM
+                    </div>
+<div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface leading-tight">Dr. Akplogan M.</div>
+<div class="font-body-sm text-body-sm text-secondary">Échographie &amp; Radiologie</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-sm text-center font-data-mono font-bold">46</td>
+<td class="py-3 px-space-sm text-right font-data-mono font-semibold">280 000</td>
+<td class="py-3 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container text-on-surface">
+                    90% Tiers-payant
+                  </span>
+</td>
+<td class="py-3 px-space-sm text-right">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-tertiary bg-tertiary-container/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>97%
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-body-sm font-body-sm text-secondary">
+<span>Rémunérations sur vacations validées par la direction administrative.</span>
+<button class="text-primary hover:underline font-label-md font-bold flex items-center gap-1" type="button">
+          Détail des honoraires <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Bloc droit (4 cols) : Diagnostics Fréquents CIM-10 -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="mb-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Diagnostics fréquents</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">CIM-10</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Profil épidémiologique • Pôle Cotonou</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- 1. Paludisme -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-primary/15 text-primary rounded font-data-mono font-bold text-label-sm">B50.9</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Paludisme</span>
+</div>
+<span class="font-data-mono font-bold text-on-surface text-body-md">142 cas</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1.5">
+<div class="bg-primary h-full rounded-full" style="width: 38%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary block mt-1">38% des motifs d'admission</span>
+</div>
+<!-- 2. HTA -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-secondary-container text-on-secondary-fixed rounded font-data-mono font-bold text-label-sm">I10</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Hypertension (HTA)</span>
+</div>
+<span class="font-data-mono font-bold text-on-surface text-body-md">86 cas</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1.5">
+<div class="bg-secondary h-full rounded-full" style="width: 23%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary block mt-1">23% • Suivis chroniques &amp; bilans</span>
+</div>
+<!-- 3. Diabète type 2 -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-high text-on-surface-variant rounded font-data-mono font-bold text-label-sm">E11</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Diabète de type 2</span>
+</div>
+<span class="font-data-mono font-bold text-on-surface text-body-md">54 cas</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1.5">
+<div class="bg-primary-container h-full rounded-full" style="width: 15%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary block mt-1">15% • Suivi endocrinologique</span>
+</div>
+<!-- 4. Gastrite aiguë -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-high text-on-surface-variant rounded font-data-mono font-bold text-label-sm">K29</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Troubles digestifs</span>
+</div>
+<span class="font-data-mono font-bold text-on-surface text-body-md">48 cas</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1.5">
+<div class="bg-outline h-full rounded-full" style="width: 13%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary block mt-1">13% • Gastrites et gastro-entérites</span>
+</div>
+<!-- 5. IRA -->
+<div class="p-space-sm bg-surface-container-low/50 rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 bg-surface-container-high text-on-surface-variant rounded font-data-mono font-bold text-label-sm">J06</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Infections resp. (IRA)</span>
+</div>
+<span class="font-data-mono font-bold text-on-surface text-body-md">38 cas</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1.5">
+<div class="bg-tertiary h-full rounded-full" style="width: 11%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary block mt-1">11% • Rhino-pharyngites &amp; broncho.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs text-center">
+<span class="font-label-sm text-label-sm text-secondary">Données déclaratives transmises à la Direction Départementale de la Santé (DDS Littoral)</span>
+</div>
+</div>
+</section>
+</div></main></div></body></html>
