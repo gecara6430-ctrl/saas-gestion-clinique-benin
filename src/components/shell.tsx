@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase/browser';
 
 const INACTIVE = "flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all";
 const ACTIVE_DASHBOARD = "flex items-center justify-between px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-label-lg rounded-lg";
@@ -119,11 +120,25 @@ const HREFS: Record<string, string> = {
 
 export function Shell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.push('/login');
+  };
 
   const ROUTES: Record<string, string> = {
     '/': 'tableau-de-bord',
@@ -166,7 +181,13 @@ export function Shell({ children }: { children: ReactNode }) {
 <a aria-current={activePath === 'parametres' ? 'page' : undefined} className={activePath === 'parametres' ? activeClasses : INACTIVE} data-path="parametres" href="/parametres" onClick={() => setMenuOpen(false)}><div className="flex items-center gap-space-sm"><span className="material-symbols-outlined text-[20px]">tune</span><span className="font-label-lg text-label-lg">Paramètres</span></div></a>
 </nav>
       )}
-</div><div className="p-space-md m-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs"><div className="flex items-center gap-space-xs"><span className="material-symbols-outlined text-primary text-[18px]">emergency</span><span className="font-label-md text-label-md text-on-surface">Urgences SM</span></div><span className="font-data-mono text-data-mono text-on-surface-variant">+229 21 30 11 00</span><span className="font-label-sm text-label-sm text-tertiary flex items-center gap-space-xxs"><span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Garde 24h/7j</span></div></aside>
+</div><div className="p-space-md m-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-xs"><div className="flex items-center gap-space-xs"><span className="material-symbols-outlined text-primary text-[18px]">emergency</span><span className="font-label-md text-label-md text-on-surface">Urgences SM</span></div><span className="font-data-mono text-data-mono text-on-surface-variant">+229 21 30 11 00</span><span className="font-label-sm text-label-sm text-tertiary flex items-center gap-space-xxs"><span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Garde 24h/7j</span>
+        {user && (
+          <button onClick={handleSignOut} className="mt-space-sm w-full h-10 rounded-lg bg-error text-on-error font-label-sm text-label-sm transition-colors hover:bg-error/90">
+            Déconnexion
+          </button>
+        )}
+      </div></aside>
       {menuOpen && (
         <div className="fixed inset-0 bg-black/40 z-[45] lg:hidden" aria-hidden="true" onClick={() => setMenuOpen(false)} />
       )}
